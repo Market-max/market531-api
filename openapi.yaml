@@ -1,0 +1,324 @@
+openapi: 3.1.0
+info:
+  title: Mini.Game API
+  version: 1.0.0
+  description: Mini.Game 中文 API 文档。此 OpenAPI 文件由迁移脚本生成，API 细节可继续从页面内容中精修。
+servers:
+  - url: https://example.com
+    description: 请替换为实际 API Base URL
+tags:
+  - name: 产品 API 接口
+    description: 产品 API 接口相关接口，来源于 Mini.Game 中文文档。
+  - name: 直播间特殊接口
+    description: 直播间特殊接口相关接口，来源于 Mini.Game 中文文档。
+  - name: 报表及功能接口
+    description: 报表及功能接口相关接口，来源于 Mini.Game 中文文档。
+paths:
+  /api/game/loadlist:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 获取产品列表
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/game/loadlist
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/huo-qu-chan-pin-lie-biao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/huo-qu-chan-pin-lie-biao
+      x-page-file: ./pages/chan-pin-api-jie-kou-huo-qu-chan-pin-lie-biao.md
+  /docs/chan-pin-api-jie-kou-dan-yi-qian-bao:
+    get:
+      tags:
+        - 产品 API 接口
+      summary: 单一钱包
+      description: |-
+        此条目由迁移脚本从中文文档生成。请参考原始页面补充真实接口路径、请求方法、参数和响应结构。
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao
+      x-page-file: ./pages/chan-pin-api-jie-kou-dan-yi-qian-bao.md
+  /api/usr/ingame:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 请求进入游戏
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/usr/ingame?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/qing-qiu-jin-ru-you-xi
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/qing-qiu-jin-ru-you-xi
+      x-page-file: ./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-qing-qiu-jin-ru-you-xi.md
+  /api/user/verify_session:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 用户身份验证
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/user/verify_session?trace_id=minigame_trace_id
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/yong-hu-shen-fen-yan-zheng
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/yong-hu-shen-fen-yan-zheng
+      x-page-file: ./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-yong-hu-shen-fen-yan-zheng.md
+  /api/balance/get_balance:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 获取用户余额
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/balance/get_balance?trace_id=minigame_trace_id
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/huo-qu-yong-hu-yu-e
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/huo-qu-yong-hu-yu-e
+      x-page-file: ./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-huo-qu-yong-hu-yu-e.md
+  /api/balance/change_balance:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 改变用户余额
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/balance/change_balance?trace_id=minigame_trace_id
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/gai-bian-yong-hu-yu-e
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/gai-bian-yong-hu-yu-e
+      x-page-file: ./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-gai-bian-yong-hu-yu-e.md
+  /docs/chan-pin-api-jie-kou-zhuan-zhang-qian-bao:
+    get:
+      tags:
+        - 产品 API 接口
+      summary: 转账钱包
+      description: |-
+        此条目由迁移脚本从中文文档生成。请参考原始页面补充真实接口路径、请求方法、参数和响应结构。
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao.md
+  /api/player/v1/authorize:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 获取用户鉴权token
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/player/v1/authorize?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/huo-qu-yong-hu-jian-quan-token
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/huo-qu-yong-hu-jian-quan-token
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-huo-qu-yong-hu-jian-quan-token.md
+  /api/cash/v1/transfer:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 余额转入/转出
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/cash/v1/transfer?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/yuezhuan-ru-zhuan-chu
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/yuezhuan-ru-zhuan-chu
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-yuezhuan-ru-zhuan-chu.md
+  /api/game/v1/entergame:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 进入游戏
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/game/v1/entergame?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/jin-ru-you-xi
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/jin-ru-you-xi
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-jin-ru-you-xi.md
+  /api/cash/v1/getPlayerWallet:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 查询用户余额
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/cash/v1/getPlayerWallet?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-yong-hu-yu-e
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-yong-hu-yu-e
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-yong-hu-yu-e.md
+  /api/cash/v1/transfer/status:
+    post:
+      tags:
+        - 产品 API 接口
+      summary: 查询转账状态
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/cash/v1/transfer/status?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-zhuan-zhang-zhuang-tai
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-zhuan-zhang-zhuang-tai
+      x-page-file: ./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-zhuan-zhang-zhuang-tai.md
+  /api/live/list:
+    post:
+      tags:
+        - 直播间特殊接口
+      summary: 获取直播间列表
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/live/list
+
+        源页面：https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/huo-qu-zhi-bo-jian-lie-biao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/huo-qu-zhi-bo-jian-lie-biao
+      x-page-file: ./pages/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-huo-qu-zhi-bo-jian-lie-biao.md
+  /docs/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-dan-yi-qian-bao:
+    get:
+      tags:
+        - 直播间特殊接口
+      summary: 单一钱包
+      description: |-
+        此条目由迁移脚本从中文文档生成。请参考原始页面补充真实接口路径、请求方法、参数和响应结构。
+
+        源页面：https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/dan-yi-qian-bao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/dan-yi-qian-bao
+      x-page-file: ./pages/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-dan-yi-qian-bao.md
+  /api/live/enter:
+    post:
+      tags:
+        - 直播间特殊接口
+      summary: 进入直播间
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：/api/live/enter
+
+        源页面：https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/zhuan-zhang-qian-bao/jin-ru-zhi-bo-jian
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/zhuan-zhang-qian-bao/jin-ru-zhi-bo-jian
+      x-page-file: ./pages/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-zhuan-zhang-qian-bao-jin-ru-zhi-bo-jian.md
+  /docs/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-zhuan-zhang-qian-bao:
+    get:
+      tags:
+        - 直播间特殊接口
+      summary: 转账钱包
+      description: |-
+        此条目由迁移脚本从中文文档生成。请参考原始页面补充真实接口路径、请求方法、参数和响应结构。
+
+        源页面：https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/zhuan-zhang-qian-bao
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou/zhuan-zhang-qian-bao
+      x-page-file: ./pages/huo-qu-zhi-bo-jian-lie-biao-te-shu-jie-kou-zhuan-zhang-qian-bao.md
+  /%7BBACKEND_URL%7D/api/special/outer/record/GetGameRecordList:
+    post:
+      tags:
+        - 报表及功能接口
+      summary: 注单记录
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：{BACKEND_URL}/api/special/outer/record/GetGameRecordList?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu.md
+  /%7BBACKEND_URL%7D/api/special/outer/record/GetGameRecordCount:
+    post:
+      tags:
+        - 报表及功能接口
+      summary: 注单记录数量
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：{BACKEND_URL}/api/special/outer/record/GetGameRecordCount?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu-shu-liang
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu-shu-liang
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu-shu-liang.md
+  /%7BBACKEND_URL%7D/api/special/outer/record/GetGameLogList:
+    post:
+      tags:
+        - 报表及功能接口
+      summary: 游戏记录
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：{BACKEND_URL}/api/special/outer/record/GetGameLogList?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/you-xi-ji-lu
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/you-xi-ji-lu
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-you-xi-ji-lu.md
+  /%7BBACKEND_URL%7D/api/special/outer/record/GetGameLogCount:
+    post:
+      tags:
+        - 报表及功能接口
+      summary: 游戏记录数量
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：{BACKEND_URL}/api/special/outer/record/GetGameLogCount?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/you-xi-ji-lu-shu-liang
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/you-xi-ji-lu-shu-liang
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-you-xi-ji-lu-shu-liang.md
+  /docs/bao-biao-ji-gong-neng-jie-kou-te-shu-cuo-wu-dai-ma:
+    get:
+      tags:
+        - 报表及功能接口
+      summary: 特殊错误代码
+      description: |-
+        此条目由迁移脚本从中文文档生成。请参考原始页面补充真实接口路径、请求方法、参数和响应结构。
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/te-shu-cuo-wu-dai-ma
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/te-shu-cuo-wu-dai-ma
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-te-shu-cuo-wu-dai-ma.md
+  /%7BBACKEND_URL%7D/api/special/outer/record/SimulatedLoginUrl:
+    post:
+      tags:
+        - 报表及功能接口
+      summary: 获取商户后台快捷登录地址
+      description: |-
+        此条目由迁移脚本从中文文档生成。原始接口声明：{BACKEND_URL}/api/special/outer/record/SimulatedLoginUrl?trace_id={trace_id}
+
+        源页面：https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/huo-qu-shang-hu-hou-tai-kuai-jie-deng-lu-di-zhi
+      responses:
+        "200":
+          description: 文档条目
+      x-source-url: https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/huo-qu-shang-hu-hou-tai-kuai-jie-deng-lu-di-zhi
+      x-page-file: ./pages/bao-biao-ji-gong-neng-jie-kou-huo-qu-shang-hu-hou-tai-kuai-jie-deng-lu-di-zhi.md

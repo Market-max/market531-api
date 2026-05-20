@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini.Game API 文档</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+    <script src="./market-api-data.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">POLY MARKET</p>
+        <h1>API 文档中心</h1>
+      </div>
+      <nav class="top-actions" aria-label="顶部导航">
+        <button class="tab-button active" type="button" data-view="guide">接入文档</button>
+        <button class="tab-button" type="button" data-view="market">做市API</button>
+        <!-- <button class="tab-button" type="button" data-view="api">API Reference</button> -->
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="search-wrap">
+          <input id="search" type="search" placeholder="搜索中文文档" autocomplete="off" />
+        </div>
+        <nav id="nav" class="nav-list" aria-label="文档导航"></nav>
+      </aside>
+
+      <section class="content-panel" aria-live="polite">
+        <article id="content" class="doc-content"></article>
+        <div id="api-reference" class="api-reference hidden"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

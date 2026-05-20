@@ -1,0 +1,269 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f4ee;
+  --panel: #fffdfa;
+  --ink: #171717;
+  --muted: #6d6a63;
+  --line: #ded8cd;
+  --accent: #ce3f27;
+  --accent-soft: #fae4dc;
+  --code: #263238;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+.topbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 112px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  min-height: calc(100vh - 112px);
+}
+
+body.api-mode .layout {
+  grid-template-columns: 1fr;
+}
+
+body.api-mode .sidebar {
+  display: none;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  background: #fbf8f2;
+  padding: 18px;
+  overflow: auto;
+}
+
+.search-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-bottom: 12px;
+  background: #fbf8f2;
+}
+
+body.market-mode .search-wrap {
+  display: none;
+}
+
+#search {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.nav-group-title {
+  margin: 18px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.market-nav-group-title {
+  margin-top: 26px;
+  color: #9aa1b6;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  padding: 9px 10px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: var(--accent-soft);
+}
+
+.market-nav-item {
+  color: #31405c;
+  padding: 7px 10px;
+}
+
+.market-nav-item:hover,
+.market-nav-item.active {
+  background: #f1f1f3;
+}
+
+.content-panel {
+  min-width: 0;
+  background: var(--panel);
+}
+
+.doc-content {
+  max-width: 980px;
+  padding: 40px min(7vw, 72px);
+}
+
+.doc-content h1,
+.doc-content h2,
+.doc-content h3 {
+  line-height: 1.2;
+}
+
+.doc-content h1 {
+  font-size: 38px;
+}
+
+.doc-content h2 {
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  font-size: 26px;
+}
+
+.doc-content p,
+.doc-content li {
+  color: #2d2a25;
+  line-height: 1.75;
+}
+
+.doc-content table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-collapse: collapse;
+}
+
+.doc-content th,
+.doc-content td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+.doc-content th {
+  background: #f4efe7;
+}
+
+.doc-content pre {
+  overflow: auto;
+  border-radius: 8px;
+  background: var(--code);
+  color: #eef6f7;
+  padding: 16px;
+}
+
+.doc-content code {
+  font-family: "Cascadia Code", Consolas, monospace;
+}
+
+body.market-mode .doc-content h1 {
+  margin-bottom: 18px;
+}
+
+body.market-mode .doc-content h2 {
+  margin-top: 30px;
+}
+
+body.market-mode .doc-content > p:first-of-type {
+  color: #31405c;
+  font-size: 16px;
+}
+
+.api-reference {
+  height: calc(100vh - 112px);
+}
+
+body.api-mode .content-panel {
+  background: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    max-height: 42vh;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .doc-content {
+    padding: 28px 18px;
+  }
+}
