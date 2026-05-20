@@ -57,6 +57,12 @@ function updateRouteHash(hash, historyMode = "push") {
   }
 }
 
+function normalizeMarkdownAssetPaths(markdown) {
+  return markdown
+    .replace(/(\]\(|\bsrc=["'])\.\.\/assets\//g, "$1./assets/")
+    .replace(/(\]\(|\bsrc=["'])\/assets\//g, "$1./assets/");
+}
+
 function syncTopbarVisibility() {
   const shouldCollapse = state.view !== "api" && (contentPanel.scrollTop || 0) > 72;
   document.body.classList.toggle("topbar-collapsed", shouldCollapse);
@@ -233,7 +239,8 @@ async function openPage(slug, anchor = null, options = {}) {
   }
 
   const response = await fetch(page.file);
-  const markdown = response.ok ? await response.text() : `# ${page.title}\n\n页面内容加载失败。`;
+  const rawMarkdown = response.ok ? await response.text() : `# ${page.title}\n\n页面内容加载失败。`;
+  const markdown = normalizeMarkdownAssetPaths(rawMarkdown);
   content.innerHTML = DOMPurify.sanitize(marked.parse(markdown));
   scrollToContentAnchor(anchor);
 }
