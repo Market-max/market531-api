@@ -63,67 +63,6 @@
       }
     },
     {
-      "title": "单一钱包综述",
-      "slug": "chan-pin-api-jie-kou-dan-yi-qian-bao",
-      "group": "单一钱包",
-      "sourceUrl": "...",
-      "file": "./pages/chan-pin-api-jie-kou-dan-yi-qian-bao.md",
-      "apiLike": true,
-      "endpoint": null
-    },
-    {
-      "title": "请求进入游戏",
-      "slug": "chan-pin-api-jie-kou-dan-yi-qian-bao-qing-qiu-jin-ru-you-xi",
-      "group": "单一钱包",
-      "sourceUrl": "...",
-      "file": "./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-qing-qiu-jin-ru-you-xi.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/usr/ingame",
-        "raw": "/api/usr/ingame?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "用户身份验证",
-      "slug": "chan-pin-api-jie-kou-dan-yi-qian-bao-yong-hu-shen-fen-yan-zheng",
-      "group": "单一钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/yong-hu-shen-fen-yan-zheng",
-      "file": "./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-yong-hu-shen-fen-yan-zheng.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/user/verify_session",
-        "raw": "/api/user/verify_session?trace_id=minigame_trace_id"
-      }
-    },
-    {
-      "title": "获取用户余额",
-      "slug": "chan-pin-api-jie-kou-dan-yi-qian-bao-huo-qu-yong-hu-yu-e",
-      "group": "单一钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/huo-qu-yong-hu-yu-e",
-      "file": "./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-huo-qu-yong-hu-yu-e.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/balance/get_balance",
-        "raw": "/api/balance/get_balance?trace_id=minigame_trace_id"
-      }
-    },
-    {
-      "title": "改变用户余额",
-      "slug": "chan-pin-api-jie-kou-dan-yi-qian-bao-gai-bian-yong-hu-yu-e",
-      "group": "单一钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/dan-yi-qian-bao/gai-bian-yong-hu-yu-e",
-      "file": "./pages/chan-pin-api-jie-kou-dan-yi-qian-bao-gai-bian-yong-hu-yu-e.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/balance/change_balance",
-        "raw": "/api/balance/change_balance?trace_id=minigame_trace_id"
-      }
-    },
-    {
       "title": "转账钱包综述",
       "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao",
       "group": "转账钱包",
@@ -222,15 +161,6 @@
         "path": "/%7BBACKEND_URL%7D/api/special/outer/record/GetGameRecordCount",
         "raw": "{BACKEND_URL}/api/special/outer/record/GetGameRecordCount?trace_id={trace_id}"
       }
-    },
-    {
-      "title": "特殊错误代码",
-      "slug": "bao-biao-ji-gong-neng-jie-kou-te-shu-cuo-wu-dai-ma",
-      "group": "报表及功能接口",
-      "sourceUrl": "https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/te-shu-cuo-wu-dai-ma",
-      "file": "./pages/bao-biao-ji-gong-neng-jie-kou-te-shu-cuo-wu-dai-ma.md",
-      "apiLike": true,
-      "endpoint": null
     }
   ]
 }

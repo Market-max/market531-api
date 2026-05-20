@@ -33,7 +33,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "user-login",
-          label: "/user/login",
+          label: "用户登录/注册",
           method: "POST",
           path: "/user/login",
           auth: "user",
@@ -80,7 +80,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "wallet-balance",
-          label: "/wallet/balance",
+          label: "查询钱包余额",
           method: "POST",
           path: "/wallet/balance",
           auth: "token",
@@ -101,7 +101,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "wallet-deposit",
-          label: "/wallet/deposit",
+          label: "钱包充值",
           method: "POST",
           path: "/wallet/deposit",
           auth: "token",
@@ -134,7 +134,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "wallet-withdraw",
-          label: "/wallet/withdraw",
+          label: "钱包提现",
           method: "POST",
           path: "/wallet/withdraw",
           auth: "token",
@@ -173,7 +173,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "event-list",
-          label: "/event/list",
+          label: "获取事件列表",
           method: "POST",
           path: "/event/list",
           auth: "token",
@@ -224,7 +224,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "event-detail",
-          label: "/event/detail",
+          label: "获取事件详情",
           method: "POST",
           path: "/event/detail",
           auth: "token",
@@ -267,7 +267,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "trade-buy",
-          label: "/trade/buy",
+          label: "市价买入",
           method: "POST",
           path: "/trade/buy",
           auth: "token",
@@ -304,7 +304,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "trade-sell",
-          label: "/trade/sell",
+          label: "市价卖出",
           method: "POST",
           path: "/trade/sell",
           auth: "token",
@@ -339,7 +339,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "trade-order",
-          label: "/trade/order",
+          label: "查询单笔订单详情",
           method: "POST",
           path: "/trade/order",
           auth: "token",
@@ -383,7 +383,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "trade-list",
-          label: "/trade/list",
+          label: "获取交易列表",
           method: "POST",
           path: "/trade/list",
           auth: "token",
@@ -436,7 +436,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "limit-order-place",
-          label: "/limitOrder/place",
+          label: "下限价单",
           method: "POST",
           path: "/limitOrder/place",
           auth: "token",
@@ -477,7 +477,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "limit-order-cancel",
-          label: "/limitOrder/cancel",
+          label: "取消限价单",
           method: "POST",
           path: "/limitOrder/cancel",
           auth: "token",
@@ -493,7 +493,7 @@ window.MARKET_API_DATA = {
         },
         {
           slug: "limit-order-list",
-          label: "/limitOrder/list",
+          label: "查询我的限价单列表",
           method: "POST",
           path: "/limitOrder/list",
           auth: "token",
@@ -548,7 +548,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "position-list",
-          label: "/position/list",
+          label: "查询我的当前持仓",
           method: "POST",
           path: "/position/list",
           auth: "token",
@@ -589,7 +589,7 @@ window.MARKET_API_DATA = {
       items: [
         {
           slug: "price-history-get",
-          label: "/priceHistory/get",
+          label: "获取价格历史K线数据",
           method: "POST",
           path: "/priceHistory/get",
           auth: "token",

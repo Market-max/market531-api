@@ -9,7 +9,7 @@
 | Name           | Value                             |
 | -------------- | --------------------------------- |
 | `Content-Type` | "application/json; charset=utf-8" |
-| `sign`         | "mini.game\_sign\_string"         |
+| `sign`         | "sign\_string"         |
 签名算法请查阅 [签名算法及示例](#/kuai-su-kai-shi-jie-ru-shuo-ming-bi-kan#qian-ming-suan-fa-ji-shi-li) 页面描述
 ## **Body** <a href="#body" id="body"></a>
 

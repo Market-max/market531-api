@@ -2,10 +2,10 @@
 
 ## 流程图 <a href="#liu-cheng-tu" id="liu-cheng-tu"></a>
 
-<figure><img src="/files/7kwBQW6rM2yzhn02vCfN" alt=""><figcaption></figcaption></figure>
+<img src="../assets/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-tu.png" width="125%" />
 
 ## Request 参数 <a href="#h3-2-api" id="h3-2-api"></a>
-接入方调用MINI.GAME平台所有API调用均需包含
+接入方调用POLY平台所有API调用均需包含
 **`POST`** `/`**`MINIGAME_APIURL`**`?trace_id=`**`your`**`_trace_id`
 
 ### Header <a href="#header" id="header"></a>
@@ -15,7 +15,7 @@
 | `Content-Type` | "application/json; charset=utf-8"                          |
 | `sign`         | "**your**\_sign\_string" |
 
-签名算法请查阅 [签名算法及示例](/cc/kuai-su-kai-shi/jie-ru-shuo-ming-bi-kan.md#qian-ming-suan-fa-ji-shi-li) 页面描述
+签名算法请查阅 [签名算法及示例](#/kuai-su-kai-shi-jie-ru-shuo-ming-bi-kan#qian-ming-suan-fa-ji-shi-li) 页面描述
 
 ### Body <a href="#body" id="body"></a>
 
@@ -43,8 +43,4 @@
 | data | object  | 返回的数据                |
 
 ## 错误码 <a href="#cuo-wu-ma" id="cuo-wu-ma"></a>
-更多返回错误代码请查阅 [通用错误码 ](/cc/kuai-su-kai-shi/tong-yong-cuo-wu-ma.md)页面描述
----
-
----
-来源：https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao
+更多返回错误代码请查阅 [通用错误码 ](#/kuai-su-kai-shi-tong-yong-cuo-wu-ma)页面描述

@@ -8,11 +8,16 @@ const state = {
 
 const nav = document.querySelector("#nav");
 const content = document.querySelector("#content");
+const contentPanel = document.querySelector(".content-panel") || content;
 const apiReference = document.querySelector("#api-reference");
 const search = document.querySelector("#search");
 const tabButtons = document.querySelectorAll(".tab-button");
 const MARKET_VIEW_SLUG = "zuo-shi-api";
 const marketData = window.MARKET_API_DATA;
+const SEARCH_PLACEHOLDERS = {
+  guide: "搜索中文文档",
+  market: "搜索做市 API"
+};
 
 async function loadSiteData() {
   const response = await fetch("./site-data.json");
@@ -52,6 +57,20 @@ function updateRouteHash(hash, historyMode = "push") {
   }
 }
 
+function syncTopbarVisibility() {
+  const shouldCollapse = state.view !== "api" && (contentPanel.scrollTop || 0) > 72;
+  document.body.classList.toggle("topbar-collapsed", shouldCollapse);
+}
+
+function scrollContentToTop() {
+  if (typeof contentPanel.scrollTo === "function") {
+    contentPanel.scrollTo({ top: 0 });
+  } else {
+    contentPanel.scrollTop = 0;
+  }
+  syncTopbarVisibility();
+}
+
 function getMarketItems() {
   return marketData.groups.flatMap((group) => group.items);
 }
@@ -73,13 +92,76 @@ function groupPages(pages) {
   }, new Map());
 }
 
+function headingLevel(heading) {
+  const match = heading.tagName.match(/^H([1-6])$/);
+  return match ? Number(match[1]) : 6;
+}
+
+function getSectionText(heading) {
+  const section = [heading.textContent || ""];
+  const level = headingLevel(heading);
+  let sibling = heading.nextElementSibling;
+
+  while (sibling) {
+    if (/^H[1-6]$/.test(sibling.tagName) && headingLevel(sibling) <= level) {
+      break;
+    }
+    section.push(sibling.textContent || "");
+    sibling = sibling.nextElementSibling;
+  }
+
+  return section.join(" ").toLowerCase();
+}
+
+function renderContentMatches(query, itemClassName = "nav-item") {
+  const headings = [...content.querySelectorAll("h1, h2, h3, h4")];
+  const matches = headings.filter((heading) => getSectionText(heading).includes(query));
+  const deepestLevel = matches.reduce((level, heading) => Math.max(level, headingLevel(heading)), 0);
+  const titleMatches = matches.filter((heading) => headingLevel(heading) === deepestLevel);
+
+  nav.innerHTML = "";
+  if (!titleMatches.length) {
+    const empty = document.createElement("div");
+    empty.className = "nav-empty";
+    empty.textContent = "当前页面无匹配内容";
+    nav.append(empty);
+    return;
+  }
+
+  const title = document.createElement("div");
+  title.className = "nav-group-title";
+  title.textContent = "当前页面";
+  nav.append(title);
+
+  for (const heading of titleMatches) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = itemClassName;
+    button.textContent = heading.textContent;
+    button.addEventListener("click", () => {
+      heading.scrollIntoView({ block: "start" });
+      syncTopbarVisibility();
+    });
+    nav.append(button);
+  }
+}
+
 function renderNav() {
+  const query = search.value.trim().toLowerCase();
   if (state.view === "market") {
+    if (query) {
+      renderContentMatches(query, "nav-item market-nav-item");
+      return;
+    }
     renderMarketNav();
     return;
   }
 
-  const query = search.value.trim().toLowerCase();
+  if (query) {
+    renderContentMatches(query);
+    return;
+  }
+
   const filtered = state.pages.filter((page) => {
     const haystack = `${page.title} ${page.group} ${page.slug}`.toLowerCase();
     return !query || haystack.includes(query);
@@ -104,14 +186,23 @@ function renderNav() {
 }
 
 function renderMarketNav(activeAnchor = null) {
+  const query = search.value.trim().toLowerCase();
   nav.innerHTML = "";
   for (const group of marketData.groups) {
+    const items = group.items.filter((item) => {
+      const haystack = `${group.title} ${item.label} ${item.title} ${item.path} ${item.method} ${item.slug}`.toLowerCase();
+      return !query || haystack.includes(query);
+    });
+    if (!items.length) {
+      continue;
+    }
+
     const title = document.createElement("div");
     title.className = "nav-group-title market-nav-group-title";
     title.textContent = group.title;
     nav.append(title);
 
-    for (const item of group.items) {
+    for (const item of items) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = `nav-item market-nav-item${item.slug === activeAnchor ? " active" : ""}`;
@@ -149,11 +240,12 @@ async function openPage(slug, anchor = null, options = {}) {
 
 function scrollToContentAnchor(anchor) {
   if (!anchor) {
-    content.scrollTo?.({ top: 0 });
+    scrollContentToTop();
     return;
   }
 
   document.getElementById(anchor)?.scrollIntoView({ block: "start" });
+  syncTopbarVisibility();
 }
 
 function routeContentLink(event) {
@@ -247,7 +339,7 @@ async function openMarketPage(slug = null, options = {}) {
 
   const markdown = renderMarketEndpoint(endpoint);
   content.innerHTML = DOMPurify.sanitize(marked.parse(markdown));
-  content.scrollTo({ top: 0 });
+  scrollContentToTop();
 }
 
 function openCurrentRoute(options = {}) {
@@ -263,6 +355,7 @@ function openCurrentRoute(options = {}) {
 function openApiReference() {
   state.view = "api";
   updateTabs();
+  scrollContentToTop();
 
   if (!state.scalarMounted) {
     Scalar.createApiReference("#api-reference", {
@@ -280,6 +373,7 @@ function updateTabs() {
   document.body.classList.toggle("market-mode", state.view === "market");
   content.classList.toggle("hidden", isApi);
   apiReference.classList.toggle("hidden", !isApi);
+  search.placeholder = SEARCH_PLACEHOLDERS[state.view] || SEARCH_PLACEHOLDERS.guide;
   tabButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.view === state.view);
   });
@@ -299,6 +393,7 @@ tabButtons.forEach((button) => {
 
 content.addEventListener("click", routeContentLink);
 search.addEventListener("input", renderNav);
+contentPanel.addEventListener("scroll", syncTopbarVisibility, { passive: true });
 window.addEventListener("popstate", () => {
   void openCurrentRoute({ historyMode: "none" });
 });
