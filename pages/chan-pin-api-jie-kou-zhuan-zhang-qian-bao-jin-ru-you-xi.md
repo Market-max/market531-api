@@ -21,6 +21,7 @@
 | `currency`                                                                                                                  | string       | 货币名称，"usdt"                                                                                                |
 | `gameid`                                                                                                                    | string       | 游戏id:99                                                                                                                                                            |
 | `lang`                                                                                                                      | string `非必填` | 游戏语言，默认为en                                                                                                                                                         |
+| `theme`                                                                                                                      | string `非必填` | 游戏主题，1为白色，2为黑色（不传默认是白色）                                                                                                                                                         |
 
 ## **接入方请求参数示例** <a href="#jie-ru-fang-qing-qiu-can-shu-shi-li" id="jie-ru-fang-qing-qiu-can-shu-shi-li"></a>
 

@@ -135,32 +135,6 @@
         "path": "/api/cash/v1/transfer/status",
         "raw": "/api/cash/v1/transfer/status?trace_id={trace_id}"
       }
-    },
-    {
-      "title": "注单记录",
-      "slug": "bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu",
-      "group": "报表及功能接口",
-      "sourceUrl": "https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu",
-      "file": "./pages/bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/%7BBACKEND_URL%7D/api/special/outer/record/GetGameRecordList",
-        "raw": "{BACKEND_URL}/api/special/outer/record/GetGameRecordList?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "注单记录数量",
-      "slug": "bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu-shu-liang",
-      "group": "报表及功能接口",
-      "sourceUrl": "https://docs.mini.game/cc/bao-biao-ji-gong-neng-jie-kou/zhu-dan-ji-lu-shu-liang",
-      "file": "./pages/bao-biao-ji-gong-neng-jie-kou-zhu-dan-ji-lu-shu-liang.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/%7BBACKEND_URL%7D/api/special/outer/record/GetGameRecordCount",
-        "raw": "{BACKEND_URL}/api/special/outer/record/GetGameRecordCount?trace_id={trace_id}"
-      }
     }
   ]
 }

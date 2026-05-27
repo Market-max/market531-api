@@ -448,7 +448,7 @@ window.MARKET_API_DATA = {
             { name: "outcomePos", type: "int", required: "是", description: "结果位置（0=Yes, 1=No）" },
             { name: "side", type: "string", required: "是", description: "方向（buy / sell）" },
             { name: "price", type: "float64", required: "是", description: "限价价格（0~1 之间）" },
-            { name: "quantity", type: "float64", required: "是", description: "下单份额" }
+            { name: "quantity", type: "float64", required: "是", description: "下单份额(side=buy的时候，最小下单份额是5)" }
           ],
           responseFields: [
             { name: "orderId", type: "string", description: "限价单ID" },
