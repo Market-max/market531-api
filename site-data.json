@@ -50,6 +50,19 @@
       "endpoint": null
     },
     {
+      "title": "进入游戏",
+      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-jin-ru-you-xi",
+      "group": "产品 API 接口",
+      "sourceUrl": "...",
+      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-jin-ru-you-xi.md",
+      "apiLike": true,
+      "endpoint": {
+        "method": "post",
+        "path": "/api/game/v1/entergame",
+        "raw": "/api/game/v1/entergame?trace_id={trace_id}"
+      }
+    },
+    {
       "title": "获取产品列表",
       "slug": "chan-pin-api-jie-kou-huo-qu-chan-pin-lie-biao",
       "group": "产品 API 接口",
@@ -60,80 +73,6 @@
         "method": "post",
         "path": "/api/game/loadlist",
         "raw": "/api/game/loadlist"
-      }
-    },
-    {
-      "title": "转账钱包综述",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao.md",
-      "apiLike": true,
-      "endpoint": null
-    },
-    {
-      "title": "获取用户鉴权token",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-huo-qu-yong-hu-jian-quan-token",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/huo-qu-yong-hu-jian-quan-token",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-huo-qu-yong-hu-jian-quan-token.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/player/v1/authorize",
-        "raw": "/api/player/v1/authorize?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "余额转入/转出",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-yuezhuan-ru-zhuan-chu",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/yuezhuan-ru-zhuan-chu",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-yuezhuan-ru-zhuan-chu.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/cash/v1/transfer",
-        "raw": "/api/cash/v1/transfer?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "进入游戏",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-jin-ru-you-xi",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/jin-ru-you-xi",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-jin-ru-you-xi.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/game/v1/entergame",
-        "raw": "/api/game/v1/entergame?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "查询用户余额",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-yong-hu-yu-e",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-yong-hu-yu-e",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-yong-hu-yu-e.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/cash/v1/getPlayerWallet",
-        "raw": "/api/cash/v1/getPlayerWallet?trace_id={trace_id}"
-      }
-    },
-    {
-      "title": "查询转账状态",
-      "slug": "chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-zhuan-zhang-zhuang-tai",
-      "group": "转账钱包",
-      "sourceUrl": "https://docs.mini.game/cc/chan-pin-api-jie-kou/zhuan-zhang-qian-bao/cha-xun-zhuan-zhang-zhuang-tai",
-      "file": "./pages/chan-pin-api-jie-kou-zhuan-zhang-qian-bao-cha-xun-zhuan-zhang-zhuang-tai.md",
-      "apiLike": true,
-      "endpoint": {
-        "method": "post",
-        "path": "/api/cash/v1/transfer/status",
-        "raw": "/api/cash/v1/transfer/status?trace_id={trace_id}"
       }
     }
   ]
