@@ -42,6 +42,7 @@ window.MARKET_API_DATA = {
           requestFields: [
             { name: "appId", type: "int64", required: "是", description: "应用ID" },
             { name: "account", type: "string", required: "是", description: "用户账号" },
+            { name: "password", type: "string", required: "是", description: "密码" },
             { name: "name", type: "string", required: "否", description: "昵称，默认与 account 相同" }
           ],
           responseFields: [
@@ -58,6 +59,7 @@ window.MARKET_API_DATA = {
             json: {
               appId: 10001,
               account: "demo_user_001",
+              password: "demo_password_001",
               name: "Demo User"
             }
           },
