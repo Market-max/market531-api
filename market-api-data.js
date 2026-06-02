@@ -55,9 +55,11 @@ window.MARKET_API_DATA = {
             { name: "lastActiveAt", type: "int64", description: "最后活跃时间戳（秒）" }
           ],
           requestExample: {
-            appId: 10001,
-            account: "demo_user_001",
-            name: "Demo User"
+            json: {
+              appId: 10001,
+              account: "demo_user_001",
+              name: "Demo User"
+            }
           },
           responseExample: {
             json: {
@@ -96,7 +98,7 @@ window.MARKET_API_DATA = {
             { name: "frozenAmount", type: "decimal", description: "冻结金额" },
             { name: "totalPnl", type: "decimal", description: "累计盈亏" }
           ],
-          requestExample: { appId: 10001, account: "demo_user_001", currency: "USDT" },
+          requestExample: { json: { appId: 10001, account: "demo_user_001", currency: "USDT" } },
           responseExample: { json: { balance: "1000.00", frozenAmount: "12.50", totalPnl: "35.80" }, meta: {} }
         },
         {
@@ -121,11 +123,13 @@ window.MARKET_API_DATA = {
             { name: "balance", type: "decimal", description: "充值后余额" }
           ],
           requestExample: {
-            appId: 10001,
-            account: "demo_user_001",
-            amount: 100,
-            currency: "USDT",
-            referenceId: "dep-20260520-0001"
+            json: {
+              appId: 10001,
+              account: "demo_user_001",
+              amount: 100,
+              currency: "USDT",
+              referenceId: "dep-20260520-0001"
+            }
           },
           responseExample: {
             json: { account: "demo_user_001", amount: 100, userId: 900001, balance: "1100.00" },
@@ -155,11 +159,13 @@ window.MARKET_API_DATA = {
             { name: "totalPnl", type: "decimal", description: "累计盈亏" }
           ],
           requestExample: {
-            appId: 10001,
-            account: "demo_user_001",
-            amount: 50,
-            currency: "USDT",
-            referenceId: "wd-20260520-0001"
+            json: {
+              appId: 10001,
+              account: "demo_user_001",
+              amount: 50,
+              currency: "USDT",
+              referenceId: "wd-20260520-0001"
+            }
           },
           responseExample: {
             json: { account: "demo_user_001", amount: 50, userId: 900001, balance: "1050.00", totalPnl: "35.80" },
@@ -200,7 +206,7 @@ window.MARKET_API_DATA = {
             { name: "totalBets", type: "int64", description: "总下注数" },
             { name: "cryptoPrice", type: "map[int64]float64", description: "加密货币历史价格（key=时间戳ms, value=价格）" }
           ],
-          requestExample: { status: "published", category: "crypto", limit: 20, offset: 0 },
+          requestExample: { json: { status: "published", category: "crypto", limit: 20, offset: 0 } },
           responseExample: {
             json: [
               {
@@ -243,7 +249,7 @@ window.MARKET_API_DATA = {
             { name: "orderBook", type: "object", description: "订单簿快照" },
             { name: "engine", type: "string", description: "引擎类型（\"clob\"）" }
           ],
-          requestExample: { eventId: 101 },
+          requestExample: { json: { eventId: 101 } },
           responseExample: {
             json: {
               eventId: 101,
@@ -288,7 +294,7 @@ window.MARKET_API_DATA = {
             { name: "totalVolume", type: "float64", description: "事件总交易量（更新后）" },
             { name: "totalBets", type: "int64", description: "事件总下注数（更新后）" }
           ],
-          requestExample: { eventId: 101, outcomeIndex: 0, outcomePos: 0, amount: 100 },
+          requestExample: { json: { eventId: 101, outcomeIndex: 0, outcomePos: 0, amount: 100 } },
           responseExample: {
             json: {
               orderId: "ord-buy-20260520-0001",
@@ -324,7 +330,7 @@ window.MARKET_API_DATA = {
             { name: "totalVolume", type: "float64", description: "事件总交易量（更新后）" },
             { name: "totalBets", type: "int64", description: "事件总下注数（更新后）" }
           ],
-          requestExample: { eventId: 101, outcomeIndex: 0, outcomePos: 0, shares: 50 },
+          requestExample: { json: { eventId: 101, outcomeIndex: 0, outcomePos: 0, shares: 50 } },
           responseExample: {
             json: {
               orderId: "ord-sell-20260520-0001",
@@ -361,7 +367,7 @@ window.MARKET_API_DATA = {
             { name: "feeAmount", type: "decimal", description: "手续费金额" },
             { name: "createdAt", type: "time", description: "创建时间" }
           ],
-          requestExample: { orderId: "ord-buy-20260520-0001" },
+          requestExample: { json: { orderId: "ord-buy-20260520-0001" } },
           responseExample: {
             json: {
               orderId: "ord-buy-20260520-0001",
@@ -402,7 +408,7 @@ window.MARKET_API_DATA = {
             { name: "limit", type: "int", description: "每页数量" },
             { name: "offset", type: "int", description: "当前偏移量" }
           ],
-          requestExample: { appId: 10001, eventId: 101, account: "demo_user_001", limit: 20, offset: 0 },
+          requestExample: { json: { appId: 10001, eventId: 101, account: "demo_user_001", limit: 20, offset: 0 } },
           responseExample: {
             json: {
               orders: [
@@ -460,7 +466,7 @@ window.MARKET_API_DATA = {
             { name: "fills", type: "int", description: "成交笔数" },
             { name: "crossFilled", type: "float64", description: "交叉撮合成交数量" }
           ],
-          requestExample: { eventId: 101, outcomeIndex: 0, outcomePos: 0, side: "buy", price: 0.51, quantity: 100 },
+          requestExample: { json: { eventId: 101, outcomeIndex: 0, outcomePos: 0, side: "buy", price: 0.51, quantity: 100 } },
           responseExample: {
             json: {
               orderId: "lo-20260520-0001",
@@ -488,7 +494,7 @@ window.MARKET_API_DATA = {
             { name: "orderId", type: "string", description: "限价单ID" },
             { name: "cancelled", type: "bool", description: "是否取消成功" }
           ],
-          requestExample: { orderId: "lo-20260520-0001" },
+          requestExample: { json: { orderId: "lo-20260520-0001" } },
           responseExample: { json: { orderId: "lo-20260520-0001", cancelled: true }, meta: {} }
         },
         {
@@ -518,7 +524,7 @@ window.MARKET_API_DATA = {
             { name: "timeInForce", type: "string", description: "有效期类型" },
             { name: "createdAt", type: "time", description: "创建时间" }
           ],
-          requestExample: { statusFilter: ["open", "partial"] },
+          requestExample: { json: { statusFilter: ["open", "partial"] } },
           responseExample: {
             json: [
               {
@@ -565,7 +571,7 @@ window.MARKET_API_DATA = {
             { name: "totalCost", type: "float64", description: "总成本" },
             { name: "realizedPnl", type: "float64", description: "已实现盈亏" }
           ],
-          requestExample: {},
+          requestExample: { json: {} },
           responseExample: {
             json: [
               {
@@ -608,7 +614,7 @@ window.MARKET_API_DATA = {
             { name: "outcomePos", type: "int", description: "结果位置" },
             { name: "prices", type: "[]PriceHistoryModel", description: "价格历史数组" }
           ],
-          requestExample: { eventId: "101", outcomeIndex: 0, outcomePos: 0, interval: "1m", limit: 100 },
+          requestExample: { json: { eventId: "101", outcomeIndex: 0, outcomePos: 0, interval: "1m", limit: 100 } },
           responseExample: {
             json: {
               eventId: "101",
