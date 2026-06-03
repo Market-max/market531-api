@@ -2,7 +2,7 @@
 
 ## ingame <a href="#ingame" id="ingame"></a>
 
-该API接口由**POLY平台**提供,由**接入方**进行调用 **`POST`**  { **`POLY_APIURL`** }/api/game/v1/ingame?trace_id= **`your`**`_trace_id`
+该API接口由**POLY平台**提供,由**接入方**进行调用 **`POST`**  { **`POLY_APIURL`** }/api/user/ingame?trace_id= **`your`**`_trace_id`
 `{`**`POLY_APIURL`**`}`为POLY接口域名,可通过后台获得
 ## **Headers** <a href="#headers" id="headers"></a>
 
