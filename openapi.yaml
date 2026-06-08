@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
-  title: Mini.Game API
+  title: POLY API
   version: 1.0.0
-  description: Mini.Game 中文 API 文档。此 OpenAPI 文件由迁移脚本生成，API 细节可继续从页面内容中精修。
+  description: POLY API 中文文档。此 OpenAPI 文件由迁移脚本生成，API 细节可继续从页面内容中精修。
 servers:
   - url: https://example.com
     description: 请替换为实际 API Base URL
